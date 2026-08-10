@@ -5,10 +5,25 @@ import { useState } from "react";
 export default function Hero() {
     const [isClicked, setIsClicked] = useState(false);
     return (
-        <section className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-80px)] bg-[#09090B] px-6 sm:px-8 lg:px-12 py-16 lg:py-0 gap-12 lg:gap-90">
+        <section className="relative flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-80px)] bg-[#09090B] px-6 sm:px-8 lg:px-12 py-16 lg:py-0 gap-12 lg:gap-32 overflow-hidden">
+
+            {/* Grid background */}
+            <div 
+                className="absolute inset-0 opacity-20 pointer-events-none"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(99,102,241,0.15) 1px, transparent 1px),
+                                       linear-gradient(90deg, rgba(99,102,241,0.15) 1px, transparent 1px)`,
+                    backgroundSize: '48px 48px',
+                }}
+            />
+            {/* Radial fade so grid fades out at edges */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#09090B_80%)] pointer-events-none" />
+
+            {/* Glow behind code panel */}
+            <div className="absolute right-0 top-1/3 w-[500px] h-[500px] bg-[#6366F1]/20 rounded-full blur-[120px] pointer-events-none" />
 
             {/* Left Side */}
-            <div className="flex flex-col justify-center flex-1 text-center lg:text-left items-center lg:items-start">
+            <div className="relative z-10 flex flex-col justify-center flex-1 text-center lg:text-left items-center lg:items-start">
                 <h3 className="text-[#6366F1] font-sekuya text-lg font-semibold select-none">
                     Junior
                 </h3>
@@ -43,7 +58,7 @@ export default function Hero() {
             </div>
 
             {/* Right Side */}
-            <div className="w-full max-w-md lg:max-w-2xl lg:w-[42vw] rounded-xl border border-white/10 bg-[#0d1117] p-6 shadow-2xl">
+            <div className="relative z-10 w-full max-w-md lg:max-w-2xl lg:w-[42vw] rounded-xl border border-white/10 bg-[#0d1117] p-6 shadow-2xl">
 
                 {/* Top Bar */}
                 <div className="mb-4 flex items-center gap-2">
