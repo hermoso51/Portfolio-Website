@@ -62,7 +62,7 @@ export default function SelectedWork() {
 
         {/* Section Header */}
         <div className="mb-10 text-center lg:text-left">
-          <h2 className="text-white font-sekuya text-3xl sm:text-4xl select-none">
+          <h2 className="text-white font-inter font-bold text-3xl sm:text-4xl select-none">
             Selected Work
           </h2>
           <p className="text-white/70 text-sm sm:text-base mt-3 max-w-xl mx-auto lg:mx-0 select-none">
@@ -101,7 +101,7 @@ export default function SelectedWork() {
                   <span className="text-[10px] font-mono font-semibold text-[#6366F1] uppercase tracking-wider select-none">
                     {project.category}
                   </span>
-                  <h3 className="font-sekuya font-bold text-sm mb-1.5 text-white mt-1 select-none">
+                  <h3 className="font-geist font-bold text-sm mb-1.5 text-white mt-1 select-none">
                     {project.title}
                   </h3>
                   <p className="text-white/60 text-xs leading-relaxed mb-3 select-none">
