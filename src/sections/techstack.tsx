@@ -2,11 +2,11 @@
 
 
 const Frontend= [
-    'React',
-    'Next js',
-    'TypeScript',
-    'Zustand',
-    'Tailwind css'
+    {name:'React', image:'/react.svg'},
+    {name:'Next js', image:'/next.svg'},
+    {name:'TypeScript',image:'/typescript.svg'},
+    {name:'Zustand', image:'/zustand.svg'},
+    {name:'Tailwind css', image:'/tailwind.svg'}
 ]
 
 const Backend = [
@@ -51,9 +51,17 @@ export default function TechStack() {
 
         <h1 className="text-white font-inter font-semibold text-4xl">Tech Stack</h1>
 
-        <div className="">
+        <div className="flex flex-col lg:flex-row">
+            <div className="flex-row">
+            {Frontend.map((item) =>(
+                <div key={item.name} className="text-white font-geist p-1 ">
+                    <img src={item.image} alt={item.name} className=" w-4 h-4" />
+                </div>
+                
+            ))}
 
         </div>
+       </div>
 
 
 
