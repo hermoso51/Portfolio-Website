@@ -1,12 +1,14 @@
 'use client';
 
+import { li } from "framer-motion/client";
+
 
 const Frontend= [
-    {name:'React', image:'/react.svg'},
-    {name:'Next js', image:'/next.svg'},
-    {name:'TypeScript',image:'/typescript.svg'},
-    {name:'Zustand', image:'/zustand.svg'},
-    {name:'Tailwind css', image:'/tailwind.svg'}
+    'React',
+    'Next js',
+    'TypeScript',
+    'Zustand',
+    'Tailwind css'
 ]
 
 const Backend = [
@@ -32,11 +34,15 @@ const Tools = [
     'PlayWright',
     'Postman'
 ]
+const li_class = "sm:text-sm flex items-center gap-2"
+const bullet = "text-purple-400 text-3xl select-none leading-none"
+const h2_heading = "text-white font-inter sm:text-xl"
+const textstach_text_styling = "text-white font-geist p-1"
 
 
 export default function TechStack() {
     return(
-    <section className="relative bg-[#09090B] px-6 sm:px-8 lg:px-12 py-24 overflow-hidden">
+    <section className="relative bg-[#09090B] px-6 sm:px-8 lg:px-12 py-24 overflow-hidden -mt-30">
 
       {/* Grid background, consistent with Hero */}
       <div
@@ -47,20 +53,66 @@ export default function TechStack() {
           backgroundSize: '48px 48px',
         }}>
         </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_60%,#09090B_80%)] pointer-events-none" />
+        
 
-        <h1 className="text-white font-inter font-semibold text-4xl">Tech Stack</h1>
+        <h1 className="text-white font-inter font-semibold text-4xl p-10">Tech Stack</h1>
 
-        <div className="flex flex-col lg:flex-row">
-            <div className="flex-row">
-            {Frontend.map((item) =>(
-                <div key={item.name} className="text-white font-geist p-1 ">
-                    <img src={item.image} alt={item.name} className=" w-4 h-4" />
+        <div className="flex flex-col lg:flex-row lg:justify-evenly w-full gap-9">
+            <div>
+                <h2 className={h2_heading}>Frontend</h2>
+                    <div className={textstach_text_styling}>
+                        <ul>
+                            {Frontend.map((i, index) => (
+                                <li className={li_class} key={index}>
+                                    <span className={bullet} key={index}>&#8226;</span>{i}</li>    
+                            ))}
+                        </ul>                       
+                    </div>       
+            </div>
+
+            <div>
+                <h2 className={h2_heading}>Backend</h2>
+                <div className={textstach_text_styling}>
+                    <ul>
+                        {Backend.map((i, index)=>(
+                            <li className={li_class} key={index}>
+                                <span className={bullet} key={index}>&#8226;</span>{i}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 
-            ))}
+            </div>
 
-        </div>
+            <div>
+                <h2 className={h2_heading}>Database</h2>
+                <div className={textstach_text_styling}>
+                    <ul>
+                        {Database.map((i,index)=> (
+                            <li className={li_class} key={index}>
+                                <span className={bullet} key={index}>&#8226;</span>
+                                {i}
+                            </li>
+
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h2 className={h2_heading}>Tools</h2>
+                <div className={textstach_text_styling}>
+                    <ul>
+                        {Tools.map((i,index)=>(
+                            <li className={li_class} key={index}>
+                                <span className={bullet} key={index}>&#8226;</span>
+                                {i}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
        </div>
 
 

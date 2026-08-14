@@ -2,6 +2,8 @@ import Navbar from "@/components/layout/navbar";
 import Hero from "@/sections/hero";
 import SelectedWork from "@/sections/selectedwork";
 import TechStack from "@/sections/techstack";
+import HowIbuild from "@/sections/how_i_build";
+import About from "@/sections/about";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
         <Hero />
         <SelectedWork />
         <TechStack />
+        <HowIbuild />
+        <About />
       </main>
     </div>  
   );  
